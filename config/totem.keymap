@@ -98,10 +98,29 @@
             timeout-ms = <50>;
             layers = <2>;
         };
+
+        combo_win {
+            bindings = <&sk LEFT_WIN>;
+            key-positions = <12 13>;
+            timeout-ms = <50>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <19 16>;
+            timeout-ms = <50>;
+            layers = <2>;
+        };
+
+        combo_alt {
+            bindings = <&sk LEFT_ALT>;
+            key-positions = <2 3>;
+        };
     };
 
     macros {
-        
+        // ---- lowercase ----
+        // ---- uppercase ----
     };
 
     keymap {
@@ -137,7 +156,7 @@
             label = "NUM_SYM";
             bindings = <
         &kp LEFT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp RIGHT_BRACKET  &kp TILDE            &kp KP_DIVIDE  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_ASTERISK
-        &kp LESS_THAN     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DOUBLE_QUOTES    &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_SUBTRACT
+        &kp LESS_THAN     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL          &kp DOUBLE_QUOTES    &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp MINUS
 &trans  &kp EXCLAMATION   &kp AT_SIGN           &kp DOLLAR             &kp CARET          &kp PIPE             &kp KP_N0      &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp COMMA        &kp KP_DOT
                                                 &trans                 &mo 3              &to 0                &to 1          &trans     &trans
             >;
