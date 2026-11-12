@@ -124,8 +124,192 @@
     };
 
     macros {
-        // ---- lowercase ----
-        // ---- uppercase ----
+        /* ---------- lowercase ---------- */
+
+        acc_a_lc: acc_a_lc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N4>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_e_gr_lc: acc_e_gr_lc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_e_ac_lc: acc_e_ac_lc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N3>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_i_lc: acc_i_lc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N6>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_o_lc: acc_o_lc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_u_lc: acc_u_lc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N9>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        /* ---------- uppercase ----------
+         * Each one first releases Shift: with NumLock on, a held Shift turns
+         * the numpad keys into navigation keys and would break the Alt code.
+         */
+
+        acc_a_uc: acc_a_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N2>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_e_gr_uc: acc_e_gr_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N0>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_e_ac_uc: acc_e_ac_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N1>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_i_uc: acc_i_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N4>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_o_uc: acc_o_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N0>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
+
+        acc_u_uc: acc_u_uc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings =
+                <&macro_release>,
+                <&kp LSHFT &kp RSHFT>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N7>,
+                <&macro_release>,
+                <&kp LALT>;
+        };
     };
 
     behaviors {
@@ -144,6 +328,56 @@
             bindings = <&kp DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        /* Shift-aware versions: plain press = lowercase, Shift+press = uppercase. */
+
+        ac_a: ac_a {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&acc_a_lc>, <&acc_a_uc>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ac_e_gr: ac_e_gr {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&acc_e_gr_lc>, <&acc_e_gr_uc>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ac_e_ac: ac_e_ac {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&acc_e_ac_lc>, <&acc_e_ac_uc>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ac_i: ac_i {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&acc_i_lc>, <&acc_i_uc>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ac_o: ac_o {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&acc_o_lc>, <&acc_o_uc>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ac_u: ac_u {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&acc_u_lc>, <&acc_u_uc>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -193,8 +427,8 @@
             label = "ADJ";
             bindings = <
         &kp C_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_BRI_DEC  &kp C_BRI_UP    &bt BT_CLR  &kp F7  &kp F8  &kp F9  &kp F12
-        &kp C_PREV  &kp C_NEXT    &none            &none          &none           &bt BT_NXT  &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &none       &none         &none            &none          &none           &bt BT_PRV  &kp F1  &kp F2  &kp F3  &kp F10  &trans
+        &kp C_PREV  &kp C_NEXT    &ac_a            &ac_u          &ac_i           &bt BT_NXT  &kp F4  &kp F5  &kp F6  &kp F11
+&trans  &none       &none         &ac_o            &ac_e_ac       &ac_e_gr        &bt BT_PRV  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                   &trans           &none          &none           &none       &trans  &trans
             >;
         };
