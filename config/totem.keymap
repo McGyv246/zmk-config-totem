@@ -17,7 +17,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -48,194 +47,7 @@
         };
     };
 
-    macros {
-        /* ---------- lowercase ---------- */
-
-        acc_a_lc: acc_a_lc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N4>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_e_gr_lc: acc_e_gr_lc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N2>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_e_ac_lc: acc_e_ac_lc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N3>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_i_lc: acc_i_lc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N3 &kp KP_N6>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_o_lc: acc_o_lc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N2>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_u_lc: acc_u_lc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N9>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        /* ---------- uppercase ----------
-         * Each one first releases Shift: with NumLock on, a held Shift turns
-         * the numpad keys into navigation keys and would break the Alt code.
-         */
-
-        acc_a_uc: acc_a_uc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N2>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_e_gr_uc: acc_e_gr_uc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N0>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_e_ac_uc: acc_e_ac_uc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N1>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_i_uc: acc_i_uc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N0 &kp KP_N4>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_o_uc: acc_o_uc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N0>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-
-        acc_u_uc: acc_u_uc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
-            bindings =
-                <&macro_release>,
-                <&kp LSHFT &kp RSHFT>,
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N7>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-    };
+    macros {};
 
     behaviors {
         /* Home-row Ctrl / Alt (ring and middle fingers).
@@ -276,74 +88,6 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
-
-        comma_semi: comma_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_SEMI";
-            bindings = <&kp COMMA>, <&kp SEMI>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dot_semi: dot_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_SEMI";
-            bindings = <&kp DOT>, <&kp COLON>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        /* Shift-aware accents: plain = lowercase, Shift held = uppercase. */
-
-        ac_a: ac_a {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&acc_a_lc>, <&acc_a_uc>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_e_gr: ac_e_gr {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&acc_e_gr_lc>, <&acc_e_gr_uc>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_e_ac: ac_e_ac {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&acc_e_ac_lc>, <&acc_e_ac_uc>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_i: ac_i {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&acc_i_lc>, <&acc_i_uc>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_o: ac_o {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&acc_o_lc>, <&acc_o_uc>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        ac_u: ac_u {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&acc_u_lc>, <&acc_u_uc>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     keymap {
@@ -358,7 +102,7 @@
             bindings = <
               &kp Q  &kp W        &kp E       &kp R        &kp T      &kp Y               &kp U        &kp I          &kp O        &kp P
               &kp A  &hm LCTRL S  &hm LALT D  &hs LSHFT F  &kp G      &kp H               &hs LSHFT J  &hm LALT K     &hm LCTRL L  &kp APOSTROPHE
-&sk LEFT_WIN  &kp Z  &kp X        &kp C       &kp V        &kp B      &kp N               &kp M        &comma_semi    &dot_semi    &kp FSLH        &sk LEFT_WIN
+&sk LEFT_WIN  &kp Z  &kp X        &kp C       &kp V        &kp B      &kp N               &kp M        &kp COMMA      &kp DOT      &kp SEMI        &kp DELETE
                                   &sl ACC     &kp TAB      &mo SYM    &nav_ent NAV ENTER  &kp SPACE    &kp BACKSPACE
             >;
         };
@@ -370,10 +114,10 @@
         nav_layer {
             label = "NAVI";
             bindings = <
-        &msc SCRL_UP    &none      &none      &none      &none       &kp HOME      &kp PG_DN   &kp PG_UP        &kp END              &kp INS
-        &msc SCRL_DOWN  &trans     &trans     &trans     &none       &kp LEFT      &kp DOWN    &kp UP           &kp RIGHT            &kp CAPSLOCK
-&trans  &kp DOLLAR      &kp CARET  &kp TILDE  &kp GRAVE  &kp PIPE    &kp LC(LEFT)  &kp C_MENU  &kp PRINTSCREEN  &kp LC(RIGHT_ARROW)  &kp DELETE    &trans
-                                   &trans     &trans     &trans      &trans        &trans      &trans
+        &kp DOLLAR  &kp CARET  &kp TILDE  &kp GRAVE  &kp PIPE    &kp HOME      &kp PG_DN   &kp PG_UP        &kp END              &kp INS
+        &none       &trans     &trans     &trans     &none       &kp LEFT      &kp DOWN    &kp UP           &kp RIGHT            &kp CAPSLOCK
+&trans  &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none       &kp LC(LEFT)  &kp C_MENU  &kp PRINTSCREEN  &kp LC(RIGHT_ARROW)  &kp LC(BACKSPACE)  &trans
+                               &trans     &trans     &trans      &trans        &trans      &trans
             >;
         };
 
@@ -411,10 +155,10 @@
         accent_layer {
             label = "ACC";
             bindings = <
-        &trans  &trans  &ac_e_gr  &ac_e_ac  &trans    &trans  &ac_u   &ac_i   &ac_o   &trans
-        &ac_a   &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans    &trans    &trans    &trans  &trans  &trans
+        &trans     &trans  &kp RA(E)  &kp RA(R)  &trans    &trans  &kp RA(U)  &kp RA(I)  &kp RA(O)  &trans
+        &kp RA(A)  &trans  &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans
+&trans  &trans     &trans  &trans     &trans     &trans    &trans  &trans     &trans     &trans     &trans  &trans
+                           &trans     &trans     &trans    &trans  &trans     &trans
             >;
         };
     };
