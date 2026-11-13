@@ -47,8 +47,6 @@
         };
     };
 
-    macros {};
-
     behaviors {
         /* Home-row Ctrl / Alt (ring and middle fingers).
          * require-prior-idle-ms: if you typed anything in the last 150 ms the
@@ -67,17 +65,6 @@
 
         /* Home-row Shift (index fingers). No idle rule, otherwise a capital
          * letter right after Space would come out as a lowercase f / j. */
-
-        hs: homerow_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFT";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-        };
-
         /* Right inner thumb: tap = Enter, hold = NAV layer. */
 
         nav_ent: nav_enter {
@@ -100,10 +87,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-              &kp Q  &kp W        &kp E       &kp R        &kp T      &kp Y               &kp U        &kp I          &kp O        &kp P
-              &kp A  &hm LCTRL S  &hm LALT D  &hs LSHFT F  &kp G      &kp H               &hs LSHFT J  &hm LALT K     &hm LCTRL L  &kp APOSTROPHE
-&sk LEFT_WIN  &kp Z  &kp X        &kp C       &kp V        &kp B      &kp N               &kp M        &kp COMMA      &kp DOT      &kp SEMI        &kp DELETE
-                                  &sl ACC     &kp TAB      &mo SYM    &nav_ent NAV ENTER  &kp SPACE    &kp BACKSPACE
+                &kp Q  &kp W           &kp E       &kp R        &kp T      &kp Y               &kp U        &kp I           &kp O            &kp P
+                &kp A  &hm LEFT_WIN S  &hm LALT D  &hm LCTRL F  &kp G      &kp H               &hm RCTRL J  &hm LEFT_ALT K  &hm RIGHT_WIN L  &kp APOSTROPHE
+&sk LEFT_SHIFT  &kp Z  &kp X           &kp C       &kp V        &kp B      &kp N               &kp M        &kp COMMA       &kp DOT          &kp SEMI        &sk RIGHT_SHIFT
+                                       &sl ACC     &kp TAB      &mo SYM    &nav_ent NAV ENTER  &kp SPACE    &kp BACKSPACE
             >;
         };
 
@@ -114,10 +101,10 @@
         nav_layer {
             label = "NAVI";
             bindings = <
-        &kp DOLLAR  &kp CARET  &kp TILDE  &kp GRAVE  &kp PIPE    &kp HOME      &kp PG_DN   &kp PG_UP        &kp END              &kp INS
-        &none       &trans     &trans     &trans     &none       &kp LEFT      &kp DOWN    &kp UP           &kp RIGHT            &kp CAPSLOCK
-&trans  &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none       &kp LC(LEFT)  &kp C_MENU  &kp PRINTSCREEN  &kp LC(RIGHT_ARROW)  &kp LC(BACKSPACE)  &trans
-                               &trans     &trans     &trans      &trans        &trans      &trans
+        &kp DOLLAR  &kp CARET  &kp TILDE  &kp GRAVE  &kp PIPE        &kp HOME      &kp PG_DN   &kp PG_UP        &kp END              &kp INS
+        &none       &trans     &trans     &trans     &kp QUESTION    &kp LEFT      &kp DOWN    &kp UP           &kp RIGHT            &kp CAPSLOCK
+&trans  &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none           &kp LC(LEFT)  &kp C_MENU  &kp PRINTSCREEN  &kp LC(RIGHT_ARROW)  &kp DELETE    &trans
+                               &trans     &trans     &trans          &trans        &trans      &trans
             >;
         };
 
@@ -128,10 +115,10 @@
         sym_layer {
             label = "NUM_SYM";
             bindings = <
-                      &kp LEFT_BRACE    &kp LESS_THAN         &kp GREATER_THAN       &kp RIGHT_BRACE    &kp AMPERSAND     &kp KP_DIVIDE  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_ASTERISK
-                      &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp EQUAL         &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp MINUS
-&kp NON_US_BACKSLASH  &kp EXCLAMATION   &kp AT_SIGN           &kp HASH               &kp PERCENT        &kp UNDERSCORE    &kp KP_N0      &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp COMMA        &kp KP_DOT
-                                                              &trans                 &trans             &trans            &trans         &trans     &trans
+                      &kp LEFT_BRACE    &kp LESS_THAN                  &kp GREATER_THAN                &kp RIGHT_BRACE                 &kp AMPERSAND     &kp KP_DIVIDE  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_ASTERISK
+                      &kp LEFT_BRACKET  &hm LEFT_WIN LEFT_PARENTHESIS  &hm LEFT_ALT RIGHT_PARENTHESIS  &hm LEFT_CONTROL RIGHT_BRACKET  &kp EQUAL         &kp KP_PLUS    &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp MINUS
+&kp NON_US_BACKSLASH  &kp EXCLAMATION   &kp AT_SIGN                    &kp HASH                        &kp PERCENT                     &kp UNDERSCORE    &kp KP_N0      &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp COMMA        &kp KP_DOT
+                                                                       &trans                          &trans                          &trans            &trans         &trans     &trans
             >;
         };
 
@@ -141,10 +128,10 @@
         adjust_layer {
             label = "ADJ";
             bindings = <
-        &kp C_MUTE  &kp C_VOL_DN  &kp C_VOLUME_UP   &kp C_BRI_DEC   &kp C_BRI_UP    &bt BT_CLR    &kp F7  &kp F8  &kp F9  &kp F12
-        &kp C_PREV  &kp C_NEXT    &kp C_PLAY_PAUSE  &kp KP_NUMLOCK  &none           &bt BT_SEL 0  &kp F4  &kp F5  &kp F6  &kp F11
-&trans  &none       &none         &none             &none           &none           &bt BT_SEL 1  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                  &trans            &trans          &trans          &trans        &trans  &trans
+        &kp C_MUTE  &kp C_VOL_DN         &kp C_VOLUME_UP            &kp C_BRI_DEC         &kp C_BRI_UP    &bt BT_CLR    &kp F7  &kp F8  &kp F9  &kp F12
+        &kp C_PREV  &hm LEFT_WIN C_NEXT  &hm LEFT_ALT C_PLAY_PAUSE  &hm LCTRL KP_NUMLOCK  &none           &bt BT_SEL 0  &kp F4  &kp F5  &kp F6  &kp F11
+&trans  &none       &none                &none                      &none                 &none           &bt BT_SEL 1  &kp F1  &kp F2  &kp F3  &kp F10  &trans
+                                         &trans                     &trans                &trans          &trans        &trans  &trans
             >;
         };
 
