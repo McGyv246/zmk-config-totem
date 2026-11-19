@@ -20,18 +20,18 @@
 
 #define BASE 0
 #define NAV  1
-#define SYM  2
+#define NUM_SYM  2
 #define ADJ  3
 #define ACC  4
 
 / {
-    /* ADJ appears when NAV and SYM are held together (both thumbs). */
+    /* ADJ appears when NAV and NUM_SYM are held together (both thumbs). */
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <NAV SYM>;
+            if-layers = <NAV NUM_SYM>;
             then-layer = <ADJ>;
         };
     };
@@ -105,12 +105,12 @@
                 &kp Q  &kp W            &kp E        &kp R         &kp T    &kp Y             &kp U         &kp I            &kp O             &kp P
                 &kp A  &hml LEFT_WIN S  &hml LALT D  &hml LCTRL F  &kp G    &kp H             &hmr RCTRL J  &hmr LEFT_ALT K  &hmr RIGHT_WIN L  &kp APOSTROPHE
 &sk LEFT_SHIFT  &kp Z  &kp X            &kp C        &kp V         &kp B    &kp N             &kp M         &kp COMMA        &kp DOT           &kp SEMI        &sk RIGHT_SHIFT
-                                        &sl ACC      &kp TAB       &mo 2    &nav_ent 1 ENTER  &kp SPACE     &kp BACKSPACE
+                                        &sl ACC      &kp TAB       &mo NUM_SYM  &nav_ent NAV ENTER  &kp SPACE     &kp BACKSPACE
             >;
         };
 
         nav_layer {
-            label = "NAVI";
+            label = "NAV";
             bindings = <
         &kp DOLLAR       &kp CARET    &kp TILDE  &kp GRAVE    &kp PIPE        &kp HOME      &kp PG_DN   &kp PG_UP        &kp END              &kp INS
         &none            &trans       &trans     &trans       &kp QUESTION    &kp LEFT      &kp DOWN    &kp UP           &kp RIGHT            &kp CAPSLOCK
