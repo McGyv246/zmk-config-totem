@@ -16,5 +16,5 @@ jobs:
     with:
       keymap_patterns: "config/*.keymap"
       config_path: "keymap_drawer.config.yaml"
-      output_folder: "keymap-drawer"
+      output_folder: "docs/images/keymap-drawer"
       commit_message: "Update keymap drawing"
