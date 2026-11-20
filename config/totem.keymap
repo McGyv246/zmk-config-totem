@@ -68,7 +68,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <220>;
             bindings = <&kp>, <&kp>;
 
             /* Right hand + both thumb clusters */
@@ -86,7 +86,7 @@
             flavor = "balanced";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
+            require-prior-idle-ms = <220>;
             bindings = <&kp>, <&kp>;
 
             /* Left hand + both thumb clusters */
@@ -102,10 +102,10 @@
         base_layer {
             label = "BASE";
             bindings = <
-                &kp Q  &kp W            &kp E        &kp R         &kp T    &kp Y             &kp U         &kp I            &kp O             &kp P
-                &kp A  &hml LEFT_WIN S  &hml LALT D  &hml LCTRL F  &kp G    &kp H             &hmr RCTRL J  &hmr LEFT_ALT K  &hmr RIGHT_WIN L  &kp APOSTROPHE
-&sk LEFT_SHIFT  &kp Z  &kp X            &kp C        &kp V         &kp B    &kp N             &kp M         &kp COMMA        &kp DOT           &kp SEMI        &sk RIGHT_SHIFT
-                                        &sl ACC      &kp TAB       &mo NUM_SYM  &nav_ent NAV ENTER  &kp SPACE     &kp BACKSPACE
+                &kp Q  &kp W            &kp E        &kp R         &kp T          &kp Y               &kp U         &kp I            &kp O             &kp P
+                &kp A  &hml LEFT_WIN S  &hml LALT D  &hml LCTRL F  &kp G          &kp H               &hmr RCTRL J  &hmr LEFT_ALT K  &hmr RIGHT_WIN L  &kp APOSTROPHE
+&sk LEFT_SHIFT  &kp Z  &kp X            &kp C        &kp V         &kp B          &kp N               &kp M         &kp COMMA        &kp DOT           &kp SEMI        &sk RIGHT_SHIFT
+                                        &sl ACC      &kp TAB       &mo NUM_SYM    &nav_ent NAV ENTER  &kp SPACE     &kp BACKSPACE
             >;
         };
 
